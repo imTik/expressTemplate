@@ -25,7 +25,7 @@ router.post('/upload', upload.single('file'),  (req, res, next) => {
   let contentType = null;
   if (req.headers['content-type']) contentTypeArr = req.headers['content-type'].split(';');
   if (contentTypeArr.length > 0) contentType = contentTypeArr[0];
-  console.log(contentType);
+  console.log(contentType); 
 
   res.send('success');
   // handleSQL(res, req.body);
