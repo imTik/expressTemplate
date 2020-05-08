@@ -1,13 +1,20 @@
 const mysql = require('mysql');
-let connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '123456789',
-  prot: '3306',
-  database: 'test',       // 数据库
-});
 
-connection.connect();
+function newMySql (config) {
+  let connection = mysql.createConnection(config);
+  connection.connect();
+  return connection;
+};
+
+// let connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '123456789',
+//   prot: '3306',
+//   database: 'hw',       // 数据库
+// });
+
+// connection.connect();
 
 // let querySql = 'SELECT * FROM TEST;'
 // connection.query(querySql, (error, result) => {
@@ -40,4 +47,4 @@ connection.connect();
 
 // connection.end();
 
-module.exports = connection;
+module.exports = newMySql;
