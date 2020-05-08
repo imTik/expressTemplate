@@ -32,7 +32,6 @@ router.post('/upload', upload.single('file'),  (req, res, next) => {
   
 });
 
-
 function handleSQL (res, BODY) {
 
   let { account, password, nickName, email, phone } = BODY;
